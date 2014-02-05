@@ -1,13 +1,25 @@
+= Marmalade - The free Emacs package archive =
+
+Latest news:
+
+* [[http://github.com/nicferrier/elmarmalade|Nic's new version, in EmacsLisp]]
+** this will soon be ready to get up and running on a host
+* [[http://nic.ferrier.me.uk/blog/2013_01/bad-marmalade|Nic explains what went wrong this week and what we can do to fix it]]
 
 
-== mongo maintenance ==
+== Running Marmalade documentation ==
+
+Here is some stuff Nic uses to manage the node.js/mongodb marmalade instance.
+
+
+=== Mongo maintenance ===
 
 mongodb is so lolsome.
 
 Here's just a few tips.
 
 
-=== updating the package owner ===
+==== updating the package owner ====
 
 Find the new owner's marmalade email address:
 

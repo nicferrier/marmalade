@@ -9,17 +9,18 @@ case $1 in
     install)
 	cd $INSTALLDIR
 	npm install $THISDIR
-	npm install -g forever
+	#npm install -g forever
         ;;
 
     stop)
 	cd $INSTALLDIR
-	forever stop node_modules/marmalade/marmalade.js
+	#forever stop node_modules/marmalade/marmalade.js
+        bash $THISDIR/marmalade-start stop
         ;;
 
     start)
 	cd $INSTALLDIR
-	forever start node_modules/marmalade/marmalade.js 
+        bash $THISDIR/marmalade-start run &
         ;;
 
     restart)

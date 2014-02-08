@@ -1,0 +1,19 @@
+#!/bin/bash
+
+case $1 in
+
+    run)
+        [ -f /tmp/stop-marmalade ] && rm -rf /tmp/stop-marmalade
+        while [ ! -f /tmp/stop-marmalade ]
+        do
+            node node_modules/marmalade/marmalade
+        done
+        ;;
+
+    stop)
+        touch /tmp/stop-marmalade
+        ;;
+
+esac
+
+# End

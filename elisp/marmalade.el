@@ -190,5 +190,5 @@ uploaded."
               (kill-buffer)
               (when callback (funcall callback (cdr (assoc 'package res))))))))))))
 
-
+(provide 'marmalade)
 ;;; marmalade.el ends here

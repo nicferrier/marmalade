@@ -1,68 +1,10 @@
-= Marmalade - The free Emacs package archive =
+= marmalade - the free Emacs package archive =
 
-Latest news:
+[[http://maramalade-repo.org|Marmalade]] is now hosted on an Elnode
+application - [[http://github.com/nicferrier/elmarmalade|elmarmalade]]
 
-* [[http://github.com/nicferrier/elmarmalade|Nic's new version, in EmacsLisp]]
-** this will soon be ready to get up and running on a host
-* [[http://nic.ferrier.me.uk/blog/2013_01/bad-marmalade|Nic explains what went wrong this week and what we can do to fix it]]
+You can continue to report issues here, or to the new code repository.
 
+Thanks for your support!
 
-== Running Marmalade documentation ==
-
-Here is some stuff Nic uses to manage the node.js/mongodb marmalade instance.
-
-
-=== Mongo maintenance ===
-
-mongodb is so lolsome.
-
-Here's just a few tips.
-
-
-==== updating the package owner ====
-
-Find the new owner's marmalade email address:
-
-{{{
-use marmalade
-db.user.findOne({"_name": "username"})
-}}}
-
-shows the email address in the structure.
-
-Then find the package:
-
-{{{
-use marmalade
-db.packages.findOne({"_name": "package-name"})
-}}}
-
-Check the existing owner. You'll probably want to send them an email
-explaining the change of ownership.
-
-Now update the package:
-
-{{{
-use marmalade
-db.packages.update({"_name": "package-name"}, { $set: { "owners": { "username": "email-address" } } })
-}}}
-
-Now update the user's package ownership list:
-
-{{{
-use marmalade
-db.users.update({"_name": "username"}, { $push : { "packages": "package-name" } } )
-}}}
-
-
-== FAQ ==
-
-=== API tokens? how do I change them? ===
-
-there seems to be a bug about changing API tokens.  The API token is
-stored in the db attached to the user.  It's constructed when the user
-registers and then never changed. 
-
-See https://github.com/nicferrier/marmalade/blob/master/lib/backend.js#L922 
-
-
+//Nic Ferrier, June 2014//
